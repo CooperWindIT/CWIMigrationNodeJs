@@ -9,8 +9,8 @@ class Notify {
             const transporter = nodemailer.createTransport({
                 service: "gmail",
                 auth: {
-                    user: "info@cooperwindindia.in",//"cwiinfotest@gmail.com",//"info@cooperwindindia.in",
-                    pass: "hgxv kbnt vuxp uwaz" // App Password//"tujg sfnb gewo rmkl"//"hgxv kbnt vuxp uwaz", // App Password
+                    user: "cwiinfotest@gmail.com",//" info@cooperwindindia.in",//"info@cooperwindindia.in",
+                    pass: "tujg sfnb gewo rmkl" // App Password//"hgxv kbnt vuxp uwaz"//"hgxv kbnt vuxp uwaz", // App Password
                 },
             });
 
