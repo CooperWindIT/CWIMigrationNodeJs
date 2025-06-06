@@ -164,7 +164,6 @@ class Notify {
             console.log("Skipping employee notification as EmpSubject is missing.");
         }
     }
-    
 }
 
 module.exports = new Notify();
