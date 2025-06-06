@@ -1,0 +1,76 @@
+cd C:\Users\itadmin\cloudflared
+cloudflared.exe tunnel --url http://localhost:3000
+
+C:\Users\itadmin>cd C:\Users\itadmin\cloudflared
+
+C:\Users\itadmin\cloudflared>.\cloudflared.exe --version
+cloudflared version 2025.4.0 (built 2025-04-02-1525 UTC)
+
+
+.\cloudflared.exe tunnel run quickwing-tunnel
+
+
+
+
+ DB_CONFIGS: {
+      CWIdb: {
+        user: 'admin',
+        password: 'vms123456',
+        server:'vms2025.czyay66ssdpk.eu-north-1.rds.amazonaws.com',//'CWIDEVLAP02/SQLEXPRESS',
+        database: 'CWI_db',
+        connectionTimeout: 30000, 
+        requestTimeout: 30000,  
+        options: {
+          encrypt: true, // Azure
+          trustServerCertificate: true, 
+        },
+      },
+      CWIVMS: {
+        user: 'admin',
+        password: 'vms123456',
+        server: 'vms2025.czyay66ssdpk.eu-north-1.rds.amazonaws.com',
+        database: 'QAVMS1',
+        options: {
+          encrypt: true, // Azure
+          trustServerCertificate: true, 
+        },
+      },
+      
+      // Add more databases as needed
+    },
+  };
+  
+
+
+
+  // dataAccess/sqlDbContext.js (Derived Class)
+const DbContext = require('./sqlContext')
+
+class CWIDBContext extends DbContext {
+  constructor() {
+    super(); // Call the base class constructor
+    const flavour = process.env.FLAVOUR;  // Fetch the database name from environment variables
+    let dbName;
+    if (flavour == 'CWIdb')
+      dbName = 'CWIdb';
+    else if(flavour == 'CWIVMS')
+      dbName = 'CWIVMS';
+    else
+      dbName = '';
+    this.setDatabaseName(dbName);
+    this.createPool();
+  }
+}
+const instance = new CWIDBContext(); // ✅ create the instance
+module.exports = instance; // ✅ export the instance directly
+
+
+
+
+.\cloudflared.exe tunnel run quickwing-tunnel
+cd C:\Users\itadmin\cloudflared
+
+
+C:\Users\itadmin>cd C:\Users\itadmin\cloudflared
+
+C:\Users\itadmin\cloudflared>.\cloudflared.exe tunnel run quickwing-tunnel
