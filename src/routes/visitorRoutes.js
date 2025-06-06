@@ -77,7 +77,7 @@ router.post('/MOMSubmitwithAttachment', upload.single('Attachment'), async (req,
                         <p>Hello ${visitor.Name || ''},</p>
                         <p>The following MOM has been submitted:</p>
                         <p>${MOM}</p>
-                        <p>Regards,<br>CWI Team</p>
+                        <p>BEST Regards,<br>CWI IT Team</p>
                     `,
                     Attachments: [],
                 };
