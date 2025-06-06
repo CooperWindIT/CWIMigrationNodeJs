@@ -70,7 +70,7 @@ app.use((req, res, next) => {
 // Start server only after DB connections
 const startServer = async () => {
   try {
-    await cwiDb.createPool();
+    // await cwiDb.createPool();
     await vmsDb.createPool();
 
     app.listen(PORT, host, () => {
