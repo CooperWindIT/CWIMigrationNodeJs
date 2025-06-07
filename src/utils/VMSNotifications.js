@@ -10,7 +10,7 @@ class Notify {
                 service: "gmail",
                 auth: {
                     user: "info@cooperwindindia.in",//"cwiinfotest@gmail.com ",//"info@cooperwindindia.in",
-                    pass: "hgxv kbnt vuxp uwa" // App Password//"tujg sfnb gewo rmkl z"//"hgxv kbnt vuxp uwaz", // App Password
+                    pass: "hgxv kbnt vuxp uwaz" // App Password//"tujg sfnb gewo rmkl z"//"hgxv kbnt vuxp uwaz", // App Password
                 },
             });
 
