@@ -16,7 +16,6 @@ module.exports = {
           trustServerCertificate: true, 
         },
       },
-      
       // Add more databases as needed
     },
   };
