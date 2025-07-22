@@ -5,9 +5,9 @@ module.exports = {
     DB_CONFIGS: {
       
       CWIVMS: {
-        user: 'admin',
-        password: 'vms123456',
-        server: 'pms2025.cx04awa2on1d.eu-north-1.rds.amazonaws.com',
+        user: 'sa',
+        password: 'Cwidb@1234',
+        server: '68.178.163.111',
         database: 'QAVMS1',
         connectionTimeout: 30000, 
         requestTimeout: 30000,
