@@ -54,6 +54,25 @@ class Notify {
             console.error("Error in MailToMomSubmit:", error);
         }
     }
+    async MailwithAttachment(Results) {
+    let htmlBody = Results[0].Html;
+
+    // If there is an attachment, add note at the end
+    if (Results[0].Attachments && Results[0].Attachments.length > 0) {
+        htmlBody += `<br/><br/>
+       The visitor count is more than 10. Kindly refer to the attached file for details of the additional visitors.`;
+    }
+
+    await this.sendEmail(
+        Results[0].FromEmail, 
+        [Results[0].ToEmail],  
+        Results[0].CC, 
+        Results[0].Subject, 
+        Results[0].Text,  // you can also override this if needed
+        htmlBody,
+        Results[0].Attachments
+    );
+}
     
 
     // Function to send email to the manager
