@@ -15,6 +15,7 @@ const visitorRoutes = require('./src/routes/visitorRoutes');
 const UserAccessRoutes = require('./src/routes/UserAccessRoutes');
 const uploadRoutes = require('./src/routes/file.upload.router');
 const ReportRoutes =  require('./src/routes/ReportsRoutes');
+const PublicRoutes = require('./src/routes/PublicRoutes');
 
 
 const cwiDb = require('./src/dataContext/CWIDBContext');
@@ -39,6 +40,7 @@ app.get('/', (req, res) => {
   res.send('Hello, world!');
 });
 
+app.use('/public', PublicRoutes);
 app.use('/CWIRoutes', CWIRoutes);
 app.use('/ADMINRoutes', ADMINRoutes);
 app.use('/file_upload', uploadRoutes);
